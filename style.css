@@ -1,0 +1,12 @@
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#1d2733;line-height:1.55}
+.draft{background:#b42318;color:#fff;text-align:center;padding:6px;font-size:13px;font-weight:bold}
+header{background:#14365a;color:#fff;padding:16px 6%;display:flex;justify-content:space-between;align-items:center}
+header a{color:#fff;margin-left:20px;text-decoration:none}.logo{font-weight:bold;font-size:20px}
+.hero{background:#eef3f8;padding:60px 6%}.hero h1{font-size:38px;margin:0 0 12px;color:#14365a}.hero p{font-size:18px;max-width:760px}
+.btn{display:inline-block;background:#e07a10;color:#fff;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:bold}
+section{padding:40px 6%}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border:1px solid #d5dde6;border-radius:8px;padding:20px;background:#fff}h2{color:#14365a}
+.ph{background:#fff3c4;border:1px dashed #b38600;padding:2px 6px;font-weight:bold}
+footer{background:#1d2733;color:#cfd8e3;padding:24px 6%;font-size:14px}ol li,ul li{margin-bottom:8px}
+label{display:block;margin-top:12px;font-weight:bold}input,textarea,select{width:100%;max-width:520px;padding:8px;border:1px solid #aab}
+a{color:#14365a}header a{color:#fff}.btn{border:0;cursor:pointer;color:#fff}
