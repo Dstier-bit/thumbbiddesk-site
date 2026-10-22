@@ -6,8 +6,30 @@
 <div class="card"><h3>Addendum update</h3><p style="font-size:26px;font-weight:bold;color:#14365a">$49</p>Update to a package we already processed when a new addendum is issued.<br><a class="btn" href="https://buy.stripe.com/6oU8wRbbKbsO4Xy9i8es002" target="_blank" rel="noopener">Buy Addendum Update – $49</a></div></div>
 <p><b>Rush (next business day): +$75</b>, when capacity allows. <a class="btn" href="https://buy.stripe.com/7sY3cx1Ba2Wiey8fGwes003" target="_blank" rel="noopener">Add Rush – $75</a></p>
 <p><b>Turnaround:</b> 2 business days from a complete package. Send the package at least 3 business days before the bid is due for standard, or 2 for rush, so you have a day to price.</p></section>
-<section style="background:#eef3f8"><h2>Send a bid package</h2>
-<p>Email the package files (plans, specs, addenda, bid form) or a plan-room link to <a href="mailto:bids@thumbbiddesk.com?subject=Thumb%20Bid%20Desk%20package%20request">bids@thumbbiddesk.com</a>. Tell us your trade, the bid due date, and whether you want a small, full or rush package.</p>
-<!-- Simple mailto for now. A hosted form with file upload can replace this later. -->
-<form action="mailto:bids@thumbbiddesk.com?subject=Thumb%20Bid%20Desk%20package%20request" method="post" enctype="text/plain"><label>Name</label><input name="name"><label>Company</label><input name="company"><label>Phone</label><input name="phone"><label>Trade(s)</label><input name="trades"><label>Package type</label><select name="package"><option>Small single-trade ($149)</option><option>Full bid package ($299)</option><option>Addendum update ($49)</option></select><label>Rush (+$75)?</label><select name="rush"><option>No</option><option>Yes, next business day</option></select><label>Bid due date</label><input type="date" name="due"><label>Plan-room link or notes</label><textarea rows="4" name="notes"></textarea><br><br><button class="btn" type="submit">Email your request</button></form>
-<p>Email: <a href="mailto:bids@thumbbiddesk.com?subject=Thumb%20Bid%20Desk%20package%20request">bids@thumbbiddesk.com</a></p></section><footer>Thumb Bid Desk · Based in Michigan<br>We organize and prepare bid packages. You review, set your final price, sign, and submit your own bid. Work is prepared with AI-assisted tools and checked by a person before delivery.<br><a href="terms.html">Service Terms</a></footer></body></html>
+<section id="send-package" style="background:#eef3f8"><h2>Send a bid package</h2>
+<div id="sent-msg" style="display:none;background:#e6f4ea;border:1px solid #2e7d32;padding:12px 16px;border-radius:6px;margin-bottom:16px"><b>Thanks, we got your package request.</b> We'll reply by email to confirm it's complete.</div>
+<p>Fill out the form below. Upload PDFs (up to 10 MB total per submission) or paste a plan-room link for large plan sets.</p>
+<form action="https://formsubmit.co/bids@thumbbiddesk.com" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_subject" value="New Thumb Bid Desk package request">
+<input type="hidden" name="_next" value="https://thumbbiddesk.com/pricing-contact.html?sent=1#send-package">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name">
+<label for="f-email">Email</label><input id="f-email" type="email" name="email" required autocomplete="email">
+<label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization">
+<label for="f-project">Project name and location</label><input id="f-project" name="project" required>
+<label for="f-due">Bid due date</label><input id="f-due" type="date" name="bid_due_date" required>
+<label for="f-trades">Trade(s)</label><input id="f-trades" name="trades" required>
+<label for="f-package">Package type</label><select id="f-package" name="package"><option>Small single-trade ($149)</option><option>Full bid package ($299)</option><option>Addendum update ($49)</option></select>
+<label for="f-rush">Rush (+$75)?</label><select id="f-rush" name="rush"><option>No</option><option>Yes, next business day</option></select>
+<label for="f-receipt">Stripe receipt # (optional)</label><input id="f-receipt" name="stripe_receipt">
+<label for="f-files">Upload PDFs (optional, 10 MB total max)</label><input id="f-files" type="file" name="attachment" accept="application/pdf,.pdf" multiple>
+<label for="f-link">Plan-room link (use this for large plan sets)</label><input id="f-link" type="url" name="plan_room_link" placeholder="https://">
+<label for="f-notes">Notes</label><textarea id="f-notes" rows="4" name="notes"></textarea>
+<br><br><button class="btn" type="submit">Send package request</button>
+</form>
+<p style="font-size:14px">Trouble with the form? <a href="mailto:bids@thumbbiddesk.com?subject=Thumb%20Bid%20Desk%20package%20request">Email bids@thumbbiddesk.com</a> instead.</p>
+<p>Email: <a href="mailto:bids@thumbbiddesk.com?subject=Thumb%20Bid%20Desk%20package%20request">bids@thumbbiddesk.com</a></p>
+<script>if(location.search.indexOf('sent=1')>-1){document.getElementById('sent-msg').style.display='block';}</script>
+</section><footer>Thumb Bid Desk · Based in Michigan<br>We organize and prepare bid packages. You review, set your final price, sign, and submit your own bid. Work is prepared with AI-assisted tools and checked by a person before delivery.<br><a href="terms.html">Service Terms</a></footer></body></html>
