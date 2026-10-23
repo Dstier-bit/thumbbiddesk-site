@@ -11,3 +11,26 @@ footer{background:#1d2733;color:#cfd8e3;padding:24px 6%;font-size:14px}ol li,ul 
 label{display:block;margin-top:12px;font-weight:bold}input,textarea,select{width:100%;max-width:520px;padding:8px;border:1px solid #aab}
 a{color:#14365a}header a{color:#fff}.btn{border:0;cursor:pointer;color:#fff}
 @media(max-width:700px){.grid{grid-template-columns:1fr}header{flex-direction:column;align-items:flex-start}header a{margin:8px 16px 0 0}}
+#package-form input,#package-form select,#package-form textarea{font-size:16px;font-family:inherit}
+#package-form .btn{margin-top:18px}
+.req{color:#b42318}
+.field-help{font-weight:normal;color:#3d4d5c;font-size:14px;margin:6px 0 8px;max-width:720px}
+.form-error{color:#9f1c1c;font-weight:bold;margin:8px 0 0}
+.form-note{background:#fff8e8;border:1px solid #e0c36a;border-radius:6px;padding:10px 12px;max-width:720px}
+.trade-picker,.trade-fields{min-width:0;width:100%;max-width:720px;margin:16px 0 0;padding:8px 16px 16px;border:1px solid #d5dde6;border-radius:8px;background:#fff}
+.trade-fields{display:none;border-left:4px solid #14365a}
+.trade-fields.is-open{display:block}
+.trade-picker legend,.trade-fields legend{font-weight:bold;color:#14365a;padding:0 6px}
+.trade-fields legend{font-size:18px}
+.trade-picks{display:grid;grid-template-columns:minmax(0,1fr)}
+.trade-picks label,.check-line label{font-weight:normal;display:flex;align-items:flex-start;gap:10px;margin:0;min-height:44px;cursor:pointer}
+.trade-picks input[type=checkbox],.check-line input[type=checkbox]{width:20px;height:20px;max-width:none;margin:2px 0 0;flex:0 0 auto}
+.qty-grid{display:grid;grid-template-columns:minmax(0,1fr);column-gap:20px}
+.qty-grid input,.qty-grid select,.qty-grid textarea{max-width:100%;min-width:0;width:100%}
+.scope-h{grid-column:1 / -1;font-size:15px;margin:16px 0 0;color:#14365a}
+.span-2{grid-column:1 / -1}
+.unit{font-weight:normal;color:#3d4d5c}
+.check-line{margin-top:8px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+@media(min-width:700px){.trade-picks,.qty-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:700px){#package-form .btn[type=submit]{display:block;width:100%;text-align:center;box-sizing:border-box}}

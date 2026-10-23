@@ -1,36 +1,963 @@
-<!doctype html><html><head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pricing & Contact — Thumb Bid Desk</title><link rel="stylesheet" href="style.css"></head><body><header><span class="logo">Thumb Bid Desk</span><nav><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="pricing-contact.html">Pricing &amp; Contact</a></nav></header><div class="hero"><h1>Pricing &amp; contact</h1><p><b>We work with all trades.</b></p><p>The takeoff and estimate are a starting point: you review them and set your own final price.</p><p>Every takeoff and estimate is reviewed by a person before delivery.</p><p>Simple per-package pricing. No subscriptions.</p></div>
-<section><div class="grid">
-<div class="card"><h3>Small single-trade package</h3><p style="font-size:26px;font-weight:bold;color:#14365a">$149</p>Painting, drywall or flooring: takeoff with a starting-point estimate using typical industry unit rates for one trade scope, up to ~25 pages. <b>Painting, drywall and flooring only.</b> All other trades, choose the Full $299 package.<br><a class="btn" href="https://buy.stripe.com/00w9AV2Fe68u3Tu7a0es000" target="_blank" rel="noopener">Buy Small Package – $149</a></div>
-<div class="card"><h3>Full bid package</h3><p style="font-size:26px;font-weight:bold;color:#14365a">$299</p>Takeoff, draft proposal, forms checklist, W-9/COI request letters, bid-form prep, and a go/no-go memo.<br><a class="btn" href="https://buy.stripe.com/4gM7sN2Fe54q89KeCses001" target="_blank" rel="noopener">Buy Full Bid Package – $299</a></div>
-<div class="card"><h3>Addendum update</h3><p style="font-size:26px;font-weight:bold;color:#14365a">$49</p>Update to a package we already processed when a new addendum is issued.<br><a class="btn" href="https://buy.stripe.com/6oU8wRbbKbsO4Xy9i8es002" target="_blank" rel="noopener">Buy Addendum Update – $49</a></div></div>
-<p><b>Rush (next business day): +$75</b>, when capacity allows. <a class="btn" href="https://buy.stripe.com/7sY3cx1Ba2Wiey8fGwes003" target="_blank" rel="noopener">Add Rush – $75</a></p>
-<p>Rush is a separate add-on checkout: buy your package first, then add Rush as its own $75 payment. If we can't fit a Rush order in, the $75 Rush fee is refunded in full.</p>
-<p><b>Turnaround:</b> 2 business days from a complete package. Send the package at least 3 business days before the bid is due for standard, or 2 for rush, so you have a day to price.</p>
-<p><b>Large sets:</b> packages over 300 pages get a custom turnaround that we confirm by email before work starts.</p></section>
-<section id="send-package" style="background:#eef3f8"><h2>Send a bid package</h2>
-<div id="sent-msg" style="display:none;background:#e6f4ea;border:1px solid #2e7d32;padding:12px 16px;border-radius:6px;margin-bottom:16px"><b>Thanks, we got your package request.</b> We'll reply by email to confirm it's complete.</div>
-<p>Fill out the form below. Upload PDFs (up to 10 MB total per submission) or paste a plan-room link for large plan sets.</p>
-<form action="https://formly.email/submit" method="POST" enctype="multipart/form-data">
-<input type="hidden" name="access_key" value="1e35f0cf9ffc4ee99e9c650744b64e1d">
-<input type="hidden" name="subject" value="New Thumb Bid Desk package request">
-<input type="hidden" name="redirect" value="https://thumbbiddesk.com/thank-you.html">
-<input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
-<label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name">
-<label for="f-email">Email</label><input id="f-email" type="email" name="email" required autocomplete="email">
-<label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization">
-<label for="f-project">Project name and location</label><input id="f-project" name="project" required>
-<label for="f-due">Bid due date</label><input id="f-due" type="date" name="bid_due_date" required>
-<label for="f-trades">Trade(s)</label><input id="f-trades" name="trades" required>
-<label for="f-package">Package type</label><select id="f-package" name="package"><option>Small single-trade ($149)</option><option>Full bid package ($299)</option><option>Addendum update ($49)</option></select>
-<label for="f-rush">Rush (+$75)?</label><select id="f-rush" name="rush"><option>No</option><option>Yes, next business day</option></select>
-<label for="f-receipt">Stripe receipt # (optional)</label><input id="f-receipt" name="stripe_receipt">
-<label for="f-files">Upload PDFs (optional, 10 MB total max)</label><input id="f-files" type="file" name="attachment" accept="application/pdf,.pdf" multiple>
-<label for="f-link">Plan-room link (use this for large plan sets)</label><input id="f-link" type="url" name="plan_room_link" placeholder="https://">
-<label for="f-notes">Notes</label><textarea id="f-notes" rows="4" name="notes"></textarea>
-<br><br><button class="btn" type="submit">Send package request</button>
-</form>
-<p style="font-size:14px">Trouble with the form? <a href="mailto:bids@thumbbiddesk.com?subject=Thumb%20Bid%20Desk%20package%20request">Email bids@thumbbiddesk.com</a> instead.</p>
-<p>Email: <a href="mailto:bids@thumbbiddesk.com?subject=Thumb%20Bid%20Desk%20package%20request">bids@thumbbiddesk.com</a></p>
-<script>if(location.search.indexOf('sent=1')>-1){document.getElementById('sent-msg').style.display='block';}</script>
-</section><footer>Thumb Bid Desk · Based in Michigan<br>We organize and prepare bid packages. You review, set your final price, sign, and submit your own bid. Work is prepared with AI-assisted tools and checked by a person before delivery.<br><a href="terms.html">Service Terms</a> · <a href="privacy-policy.html">Privacy Policy</a></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pricing &amp; Contact — Thumb Bid Desk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <span class="logo">Thumb Bid Desk</span>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="pricing-contact.html">Pricing &amp; Contact</a>
+  </nav>
+</header>
+<div class="hero">
+  <h1>Pricing &amp; contact</h1>
+  <p><b>We work with all trades.</b></p>
+  <p>The takeoff and estimate are a starting point: you review them and set your own final price.</p>
+  <p>Every takeoff and estimate is reviewed by a person before delivery.</p>
+  <p>Simple per-package pricing. No subscriptions.</p>
+</div>
+<section>
+  <div class="grid">
+    <div class="card">
+      <h3>Small single-trade package</h3>
+      <p style="font-size:26px;font-weight:bold;color:#14365a">$149</p>
+      Painting, drywall or flooring: takeoff with a starting-point estimate using typical industry unit rates for one trade scope, up to ~25 pages. <b>Painting, drywall and flooring only.</b> All other trades, choose the Full $299 package.<br>
+      <a class="btn" href="https://buy.stripe.com/00w9AV2Fe68u3Tu7a0es000" target="_blank" rel="noopener">Buy Small Package – $149</a>
+    </div>
+    <div class="card">
+      <h3>Full bid package</h3>
+      <p style="font-size:26px;font-weight:bold;color:#14365a">$299</p>
+      Takeoff, draft proposal, forms checklist, W-9/COI request letters, bid-form prep, and a go/no-go memo.<br>
+      <a class="btn" href="https://buy.stripe.com/4gM7sN2Fe54q89KeCses001" target="_blank" rel="noopener">Buy Full Bid Package – $299</a>
+    </div>
+    <div class="card">
+      <h3>Addendum update</h3>
+      <p style="font-size:26px;font-weight:bold;color:#14365a">$49</p>
+      Update to a package we already processed when a new addendum is issued.<br>
+      <a class="btn" href="https://buy.stripe.com/6oU8wRbbKbsO4Xy9i8es002" target="_blank" rel="noopener">Buy Addendum Update – $49</a>
+    </div>
+  </div>
+  <p><b>Rush (next business day): +$75</b>, when capacity allows. <a class="btn" href="https://buy.stripe.com/7sY3cx1Ba2Wiey8fGwes003" target="_blank" rel="noopener">Add Rush – $75</a></p>
+  <p>Rush is a separate add-on checkout: buy your package first, then add Rush as its own $75 payment. If we can't fit a Rush order in, the $75 Rush fee is refunded in full.</p>
+  <p><b>Turnaround:</b> 2 business days from a complete package. Send the package at least 3 business days before the bid is due for standard, or 2 for rush, so you have a day to price.</p>
+  <p><b>Large sets:</b> packages over 300 pages get a custom turnaround that we confirm by email before work starts.</p>
+</section>
+<section id="send-package" style="background:#eef3f8">
+  <h2>Send a bid package</h2>
+  <div id="sent-msg" style="display:none;background:#e6f4ea;border:1px solid #2e7d32;padding:12px 16px;border-radius:6px;margin-bottom:16px"><b>Thanks, we got your package request.</b> We'll reply by email to confirm it's complete.</div>
+  <p>Fill out the form below. Choose at least one trade, then add the quantities and scope details you already know. Those details are optional. If you do not have counts, check "take them off the plans." Upload PDFs (up to 10 MB total per submission) or paste a plan-room link for large plan sets.</p>
+  <noscript><p class="form-note">Quantity fields open with JavaScript. You can still send this form; put scope quantities in Notes, or email <a href="mailto:bids@thumbbiddesk.com">bids@thumbbiddesk.com</a>.</p></noscript>
+  <form id="package-form" action="https://formly.email/submit" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="access_key" value="1e35f0cf9ffc4ee99e9c650744b64e1d">
+    <input type="hidden" name="subject" value="New Thumb Bid Desk package request">
+    <input type="hidden" name="redirect" value="https://thumbbiddesk.com/thank-you.html">
+    <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+    <input type="hidden" id="f-trades" value="">
+
+    <label for="f-name">Name</label>
+    <input id="f-name" name="name" required autocomplete="name">
+    <label for="f-email">Email</label>
+    <input id="f-email" type="email" name="email" required autocomplete="email">
+    <label for="f-company">Company</label>
+    <input id="f-company" name="company" autocomplete="organization">
+    <label for="f-project">Project name and location</label>
+    <input id="f-project" name="project" required>
+    <label for="f-due">Bid due date</label>
+    <input id="f-due" type="date" name="bid_due_date" required>
+
+    <fieldset class="trade-picker">
+      <legend id="trade-legend">Trade(s) <span class="req">*</span></legend>
+      <p class="field-help">Pick every trade in this package. Scope fields for that trade open below. Only the trade choice is required.</p>
+      <div class="trade-picks" role="group" aria-labelledby="trade-legend">
+        <label for="trade-painting"><input type="checkbox" class="trade-pick" id="trade-painting" name="trades" value="Painting" data-panel="qty-painting" data-small="1" aria-controls="qty-painting" aria-expanded="false"> Painting</label>
+        <label for="trade-drywall"><input type="checkbox" class="trade-pick" id="trade-drywall" name="trades" value="Drywall" data-panel="qty-drywall" data-small="1" aria-controls="qty-drywall" aria-expanded="false"> Drywall</label>
+        <label for="trade-flooring"><input type="checkbox" class="trade-pick" id="trade-flooring" name="trades" value="Flooring" data-panel="qty-flooring" data-small="1" aria-controls="qty-flooring" aria-expanded="false"> Flooring</label>
+        <label for="trade-cabinets"><input type="checkbox" class="trade-pick" id="trade-cabinets" name="trades" value="Cabinets" data-panel="qty-cabinets" aria-controls="qty-cabinets" aria-expanded="false"> Cabinets</label>
+        <label for="trade-roofing"><input type="checkbox" class="trade-pick" id="trade-roofing" name="trades" value="Roofing" data-panel="qty-roofing" aria-controls="qty-roofing" aria-expanded="false"> Roofing</label>
+        <label for="trade-hvac"><input type="checkbox" class="trade-pick" id="trade-hvac" name="trades" value="HVAC" data-panel="qty-hvac" aria-controls="qty-hvac" aria-expanded="false"> HVAC</label>
+        <label for="trade-plumbing"><input type="checkbox" class="trade-pick" id="trade-plumbing" name="trades" value="Plumbing" data-panel="qty-plumbing" aria-controls="qty-plumbing" aria-expanded="false"> Plumbing</label>
+        <label for="trade-striping"><input type="checkbox" class="trade-pick" id="trade-striping" name="trades" value="Line striping and sealcoat" data-panel="qty-striping" aria-controls="qty-striping" aria-expanded="false"> Line striping and sealcoat</label>
+        <label for="trade-other"><input type="checkbox" class="trade-pick" id="trade-other" name="trades" value="Other" data-panel="qty-other" aria-controls="qty-other" aria-expanded="false"> Other</label>
+      </div>
+      <p id="trade-error" class="form-error" hidden>Choose at least one trade.</p>
+    </fieldset>
+
+    <label for="f-package">Package type</label>
+    <select id="f-package" name="package">
+      <option>Small single-trade ($149)</option>
+      <option>Full bid package ($299)</option>
+      <option>Addendum update ($49)</option>
+    </select>
+    <label for="f-rush">Rush (+$75)?</label>
+    <select id="f-rush" name="rush">
+      <option>No</option>
+      <option>Yes, next business day</option>
+    </select>
+    <p id="package-trade-note" class="form-note" hidden>The $149 small package covers one trade: painting, drywall, or flooring. For any other trade, or more than one trade, choose the Full bid package ($299).</p>
+
+    <div id="trade-live" class="sr-only" aria-live="polite"></div>
+
+    <fieldset class="trade-fields" id="qty-painting" data-trade="Painting" disabled>
+      <legend>Painting</legend>
+      <p class="field-help">Optional. Tell us how the painting is scoped, then any counts you already have.</p>
+      <div class="qty-grid">
+        <h3 class="scope-h">Qualifiers</h3>
+        <div>
+          <label for="paint-where">Interior or exterior</label>
+          <select id="paint-where" name="Painting - Interior or exterior">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Interior</option>
+            <option>Exterior</option>
+            <option>Both</option>
+          </select>
+        </div>
+        <div>
+          <label for="paint-job">New construction or repaint</label>
+          <select id="paint-job" name="Painting - New construction or repaint">
+            <option value="Not specified" selected>Not specified</option>
+            <option>New construction</option>
+            <option>Repaint</option>
+            <option>Both</option>
+          </select>
+        </div>
+        <div>
+          <label for="paint-condition">Surface condition</label>
+          <select id="paint-condition" name="Painting - Surface condition">
+            <option value="Not specified" selected>Not specified</option>
+            <option>New, unpainted</option>
+            <option>Good</option>
+            <option>Fair</option>
+            <option>Poor (peeling or stained)</option>
+          </select>
+        </div>
+        <div>
+          <label for="paint-prep">Prep</label>
+          <select id="paint-prep" name="Painting - Prep">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Wash and coat</option>
+            <option>Standard (scrape, sand, caulk, spot prime)</option>
+            <option>Heavy (peel, patch, full prime)</option>
+          </select>
+        </div>
+        <div>
+          <label for="paint-substrate">Substrate</label>
+          <select id="paint-substrate" name="Painting - Substrate">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Drywall</option>
+            <option>Plaster</option>
+            <option>Wood</option>
+            <option>Masonry or brick</option>
+            <option>Fiber cement</option>
+            <option>Vinyl siding</option>
+            <option>Metal</option>
+            <option>Mixed</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="paint-coats">Coats</label>
+          <select id="paint-coats" name="Painting - Coats">
+            <option value="Not specified" selected>Not specified</option>
+            <option>1 finish coat</option>
+            <option>2 finish coats</option>
+            <option>Primer and 1 finish coat</option>
+            <option>Primer and 2 finish coats</option>
+          </select>
+        </div>
+        <div>
+          <label for="paint-colors">Color changes</label>
+          <select id="paint-colors" name="Painting - Color changes">
+            <option value="Not specified" selected>Not specified</option>
+            <option>No color change</option>
+            <option>One color change</option>
+            <option>Multiple color changes</option>
+          </select>
+        </div>
+        <h3 class="scope-h">Quantities</h3>
+        <div>
+          <label for="paint-wall-sf">Interior wall area <span class="unit">(sq ft)</span></label>
+          <input id="paint-wall-sf" name="Painting - Interior wall area (sq ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-ceiling-sf">Interior ceiling area <span class="unit">(sq ft)</span></label>
+          <input id="paint-ceiling-sf" name="Painting - Interior ceiling area (sq ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-siding-sf">Exterior siding area <span class="unit">(sq ft)</span></label>
+          <input id="paint-siding-sf" name="Painting - Exterior siding area (sq ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-walls">Walls <span class="unit">(count)</span></label>
+          <input id="paint-walls" name="Painting - Walls (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-ceilings">Ceilings <span class="unit">(count)</span></label>
+          <input id="paint-ceilings" name="Painting - Ceilings (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-rooms">Rooms <span class="unit">(count)</span></label>
+          <input id="paint-rooms" name="Painting - Rooms (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-doors">Doors <span class="unit">(count)</span></label>
+          <input id="paint-doors" name="Painting - Doors (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-windows">Windows <span class="unit">(count)</span></label>
+          <input id="paint-windows" name="Painting - Windows (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-trim">Trim <span class="unit">(linear ft)</span></label>
+          <input id="paint-trim" name="Painting - Trim (linear ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-fascia">Fascia and soffit <span class="unit">(linear ft)</span></label>
+          <input id="paint-fascia" name="Painting - Fascia and soffit (linear ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-height">Ceiling height <span class="unit">(ft)</span></label>
+          <input id="paint-height" name="Painting - Ceiling height (ft)" type="number" inputmode="decimal" min="0" step="0.1" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-stories">Stories <span class="unit">(count)</span></label>
+          <input id="paint-stories" name="Painting - Stories (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="paint-deck">Deck or fence area <span class="unit">(sq ft)</span></label>
+          <input id="paint-deck" name="Painting - Deck or fence area (sq ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div class="span-2">
+          <label for="paint-notes">Other quantities / notes</label>
+          <textarea id="paint-notes" name="Painting - Other quantities / notes" rows="3"></textarea>
+        </div>
+        <div class="check-line span-2">
+          <input type="hidden" class="plans-flag" name="Painting - Take quantities off the plans" value="No">
+          <label for="paint-plans"><input id="paint-plans" class="plans-check" type="checkbox"> Quantities unknown, take them off the plans</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="trade-fields" id="qty-drywall" data-trade="Drywall" disabled>
+      <legend>Drywall</legend>
+      <p class="field-help">Optional. Finish level and board type change the price as much as the square footage.</p>
+      <div class="qty-grid">
+        <h3 class="scope-h">Qualifiers</h3>
+        <div>
+          <label for="dry-scope">Scope</label>
+          <select id="dry-scope" name="Drywall - Scope">
+            <option value="Not specified" selected>Not specified</option>
+            <option>New hang and finish</option>
+            <option>Finish only</option>
+            <option>Patch and repair</option>
+            <option>Mix</option>
+          </select>
+        </div>
+        <div>
+          <label for="dry-level">Finish level</label>
+          <select id="dry-level" name="Drywall - Finish level">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Level 1</option>
+            <option>Level 2</option>
+            <option>Level 3</option>
+            <option>Level 4 (typical painted wall)</option>
+            <option>Level 5</option>
+          </select>
+        </div>
+        <div>
+          <label for="dry-texture">Texture</label>
+          <select id="dry-texture" name="Drywall - Texture">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Smooth</option>
+            <option>Orange peel</option>
+            <option>Knockdown</option>
+            <option>Skip trowel</option>
+            <option>Match existing</option>
+          </select>
+        </div>
+        <div>
+          <label for="dry-board">Board type</label>
+          <select id="dry-board" name="Drywall - Board type">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Standard</option>
+            <option>Moisture-resistant</option>
+            <option>Mold-resistant</option>
+            <option>Fire-rated</option>
+            <option>Sound board</option>
+            <option>Mixed</option>
+          </select>
+        </div>
+        <div>
+          <label for="dry-fire">Fire rating</label>
+          <select id="dry-fire" name="Drywall - Fire rating">
+            <option value="Not specified" selected>Not specified</option>
+            <option>None</option>
+            <option>1-hour</option>
+            <option>2-hour</option>
+          </select>
+        </div>
+        <h3 class="scope-h">Quantities</h3>
+        <div>
+          <label for="dry-board-sf">Board area <span class="unit">(sq ft)</span></label>
+          <input id="dry-board-sf" name="Drywall - Board area (sq ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="dry-ceiling-sf">Ceiling area <span class="unit">(sq ft)</span></label>
+          <input id="dry-ceiling-sf" name="Drywall - Ceiling area (sq ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="dry-rooms">Rooms <span class="unit">(count)</span></label>
+          <input id="dry-rooms" name="Drywall - Rooms (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="dry-patches">Patches <span class="unit">(count)</span></label>
+          <input id="dry-patches" name="Drywall - Patches (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="dry-height">Ceiling height <span class="unit">(ft)</span></label>
+          <input id="dry-height" name="Drywall - Ceiling height (ft)" type="number" inputmode="decimal" min="0" step="0.1" autocomplete="off">
+        </div>
+        <div>
+          <label for="dry-stories">Stories <span class="unit">(count)</span></label>
+          <input id="dry-stories" name="Drywall - Stories (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div class="span-2">
+          <label for="dry-notes">Other quantities / notes</label>
+          <textarea id="dry-notes" name="Drywall - Other quantities / notes" rows="3"></textarea>
+        </div>
+        <div class="check-line span-2">
+          <input type="hidden" class="plans-flag" name="Drywall - Take quantities off the plans" value="No">
+          <label for="dry-plans"><input id="dry-plans" class="plans-check" type="checkbox"> Quantities unknown, take them off the plans</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="trade-fields" id="qty-flooring" data-trade="Flooring" disabled>
+      <legend>Flooring</legend>
+      <p class="field-help">Optional. A flooring square is 100 square feet. Send both squares and square footage if you have them.</p>
+      <div class="qty-grid">
+        <h3 class="scope-h">Qualifiers</h3>
+        <div>
+          <label for="floor-material">Material</label>
+          <select id="floor-material" name="Flooring - Material">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Hardwood</option>
+            <option>Engineered hardwood</option>
+            <option>Laminate</option>
+            <option>Luxury vinyl plank</option>
+            <option>Sheet vinyl</option>
+            <option>Ceramic or porcelain tile</option>
+            <option>Carpet</option>
+            <option>Epoxy or coated concrete</option>
+            <option>Mixed</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="floor-subfloor">Subfloor</label>
+          <select id="floor-subfloor" name="Flooring - Subfloor">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Wood</option>
+            <option>Concrete</option>
+            <option>Both</option>
+          </select>
+        </div>
+        <div>
+          <label for="floor-prep">Subfloor prep</label>
+          <select id="floor-prep" name="Flooring - Subfloor prep">
+            <option value="Not specified" selected>Not specified</option>
+            <option>None</option>
+            <option>Scrape and skim</option>
+            <option>Grind or patch</option>
+            <option>Self-leveler</option>
+            <option>New underlayment</option>
+          </select>
+        </div>
+        <div>
+          <label for="floor-remove">Remove existing floor</label>
+          <select id="floor-remove" name="Flooring - Remove existing floor">
+            <option value="Not specified" selected>Not specified</option>
+            <option>No</option>
+            <option>Yes, one layer</option>
+            <option>Yes, multiple layers</option>
+          </select>
+        </div>
+        <h3 class="scope-h">Quantities</h3>
+        <div>
+          <label for="floor-sf">Area <span class="unit">(sq ft)</span></label>
+          <input id="floor-sf" name="Flooring - Area (sq ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="floor-squares">Squares <span class="unit">(100 sq ft)</span></label>
+          <input id="floor-squares" name="Flooring - Squares (100 sq ft)" type="number" inputmode="decimal" min="0" step="0.01" autocomplete="off">
+        </div>
+        <div>
+          <label for="floor-rooms">Rooms <span class="unit">(count)</span></label>
+          <input id="floor-rooms" name="Flooring - Rooms (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="floor-stairs">Stairs <span class="unit">(flights)</span></label>
+          <input id="floor-stairs" name="Flooring - Stairs (flights)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div class="span-2">
+          <label for="floor-notes">Other quantities / notes</label>
+          <textarea id="floor-notes" name="Flooring - Other quantities / notes" rows="3"></textarea>
+        </div>
+        <div class="check-line span-2">
+          <input type="hidden" class="plans-flag" name="Flooring - Take quantities off the plans" value="No">
+          <label for="floor-plans"><input id="floor-plans" class="plans-check" type="checkbox"> Quantities unknown, take them off the plans</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="trade-fields" id="qty-cabinets" data-trade="Cabinets" disabled>
+      <legend>Cabinets</legend>
+      <p class="field-help">Optional. Linear feet and who supplies the boxes are what price this scope.</p>
+      <div class="qty-grid">
+        <h3 class="scope-h">Qualifiers</h3>
+        <div>
+          <label for="cab-supply">Supply or install</label>
+          <select id="cab-supply" name="Cabinets - Supply or install">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Install only</option>
+            <option>Supply and install</option>
+            <option>Supply only</option>
+          </select>
+        </div>
+        <div>
+          <label for="cab-island">Island</label>
+          <select id="cab-island" name="Cabinets - Island">
+            <option value="Not specified" selected>Not specified</option>
+            <option>No</option>
+            <option>Yes</option>
+          </select>
+        </div>
+        <div>
+          <label for="cab-tops">Countertops</label>
+          <select id="cab-tops" name="Cabinets - Countertops">
+            <option value="Not specified" selected>Not specified</option>
+            <option>None</option>
+            <option>Laminate</option>
+            <option>Solid surface</option>
+            <option>Quartz</option>
+            <option>Granite</option>
+            <option>Butcher block</option>
+            <option>Tile</option>
+            <option>Customer supplied</option>
+          </select>
+        </div>
+        <div>
+          <label for="cab-splash">Backsplash</label>
+          <select id="cab-splash" name="Cabinets - Backsplash">
+            <option value="Not specified" selected>Not specified</option>
+            <option>None</option>
+            <option>4-inch splash</option>
+            <option>Full height</option>
+            <option>By others</option>
+          </select>
+        </div>
+        <h3 class="scope-h">Quantities</h3>
+        <div>
+          <label for="cab-uppers">Upper cabinets <span class="unit">(linear ft)</span></label>
+          <input id="cab-uppers" name="Cabinets - Upper cabinets (linear ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="cab-lowers">Lower cabinets <span class="unit">(linear ft)</span></label>
+          <input id="cab-lowers" name="Cabinets - Lower cabinets (linear ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="cab-island-lf">Island size <span class="unit">(linear ft)</span></label>
+          <input id="cab-island-lf" name="Cabinets - Island size (linear ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="cab-top-lf">Countertop length <span class="unit">(linear ft)</span></label>
+          <input id="cab-top-lf" name="Cabinets - Countertop length (linear ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div class="span-2">
+          <label for="cab-notes">Other quantities / notes</label>
+          <textarea id="cab-notes" name="Cabinets - Other quantities / notes" rows="3"></textarea>
+        </div>
+        <div class="check-line span-2">
+          <input type="hidden" class="plans-flag" name="Cabinets - Take quantities off the plans" value="No">
+          <label for="cab-plans"><input id="cab-plans" class="plans-check" type="checkbox"> Quantities unknown, take them off the plans</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="trade-fields" id="qty-roofing" data-trade="Roofing" disabled>
+      <legend>Roofing</legend>
+      <p class="field-help">Optional. A roofing square is 100 square feet. Pitch, layers, and decking drive the labor.</p>
+      <div class="qty-grid">
+        <h3 class="scope-h">Qualifiers</h3>
+        <div>
+          <label for="roof-material">Material</label>
+          <select id="roof-material" name="Roofing - Material">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Asphalt 3-tab</option>
+            <option>Architectural shingle</option>
+            <option>Metal</option>
+            <option>TPO or PVC</option>
+            <option>EPDM</option>
+            <option>Modified bitumen</option>
+            <option>Tile</option>
+            <option>Wood shake</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="roof-pitch">Pitch</label>
+          <select id="roof-pitch" name="Roofing - Pitch">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Flat or low (under 2/12)</option>
+            <option>2/12 to 4/12</option>
+            <option>4/12 to 6/12</option>
+            <option>6/12 to 9/12</option>
+            <option>9/12 to 12/12</option>
+            <option>Steeper than 12/12</option>
+            <option>Mixed</option>
+          </select>
+        </div>
+        <div>
+          <label for="roof-deck">Decking replacement</label>
+          <select id="roof-deck" name="Roofing - Decking replacement">
+            <option value="Not specified" selected>Not specified</option>
+            <option>None</option>
+            <option>Partial</option>
+            <option>Full redeck</option>
+          </select>
+        </div>
+        <div>
+          <label for="roof-tearoff">Tear-off</label>
+          <select id="roof-tearoff" name="Roofing - Tear-off">
+            <option value="Not specified" selected>Not specified</option>
+            <option>New construction</option>
+            <option>Overlay (no tear-off)</option>
+            <option>Tear-off</option>
+            <option>Repair only</option>
+          </select>
+        </div>
+        <h3 class="scope-h">Quantities</h3>
+        <div>
+          <label for="roof-squares">Squares <span class="unit">(100 sq ft)</span></label>
+          <input id="roof-squares" name="Roofing - Squares (100 sq ft)" type="number" inputmode="decimal" min="0" step="0.01" autocomplete="off">
+        </div>
+        <div>
+          <label for="roof-sf">Roof area <span class="unit">(sq ft)</span></label>
+          <input id="roof-sf" name="Roofing - Roof area (sq ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="roof-layers">Layers to tear off <span class="unit">(count)</span></label>
+          <input id="roof-layers" name="Roofing - Layers to tear off (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="roof-stories">Stories <span class="unit">(count)</span></label>
+          <input id="roof-stories" name="Roofing - Stories (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="roof-pens">Penetrations <span class="unit">(count)</span></label>
+          <input id="roof-pens" name="Roofing - Penetrations (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="roof-skylights">Skylights <span class="unit">(count)</span></label>
+          <input id="roof-skylights" name="Roofing - Skylights (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div class="span-2">
+          <label for="roof-notes">Other quantities / notes</label>
+          <textarea id="roof-notes" name="Roofing - Other quantities / notes" rows="3"></textarea>
+        </div>
+        <div class="check-line span-2">
+          <input type="hidden" class="plans-flag" name="Roofing - Take quantities off the plans" value="No">
+          <label for="roof-plans"><input id="roof-plans" class="plans-check" type="checkbox"> Quantities unknown, take them off the plans</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="trade-fields" id="qty-hvac" data-trade="HVAC" disabled>
+      <legend>HVAC</legend>
+      <p class="field-help">Optional. Tonnage, system count, and whether the ducts stay or change are the pricing drivers.</p>
+      <div class="qty-grid">
+        <h3 class="scope-h">Qualifiers</h3>
+        <div>
+          <label for="hvac-work">Work type</label>
+          <select id="hvac-work" name="HVAC - Work type">
+            <option value="Not specified" selected>Not specified</option>
+            <option>New install</option>
+            <option>Replacement</option>
+            <option>Repair</option>
+            <option>Mix</option>
+          </select>
+        </div>
+        <div>
+          <label for="hvac-equip">Equipment type</label>
+          <select id="hvac-equip" name="HVAC - Equipment type">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Split system</option>
+            <option>Package unit</option>
+            <option>Heat pump</option>
+            <option>Mini-split</option>
+            <option>Furnace and condenser</option>
+            <option>Rooftop unit</option>
+            <option>Boiler</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="hvac-fuel">Fuel type</label>
+          <select id="hvac-fuel" name="HVAC - Fuel type">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Natural gas</option>
+            <option>Propane</option>
+            <option>Electric</option>
+            <option>Oil</option>
+            <option>Dual fuel</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="hvac-duct">Ductwork</label>
+          <select id="hvac-duct" name="HVAC - Ductwork">
+            <option value="Not specified" selected>Not specified</option>
+            <option>New</option>
+            <option>Existing, leave as-is</option>
+            <option>Existing, modify</option>
+            <option>Ductless</option>
+          </select>
+        </div>
+        <h3 class="scope-h">Quantities</h3>
+        <div>
+          <label for="hvac-tons">Tonnage <span class="unit">(tons)</span></label>
+          <input id="hvac-tons" name="HVAC - Tonnage (tons)" type="number" inputmode="decimal" min="0" step="0.1" autocomplete="off">
+        </div>
+        <div>
+          <label for="hvac-btu">Capacity <span class="unit">(BTU/h)</span></label>
+          <input id="hvac-btu" name="HVAC - Capacity (BTU/h)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="hvac-zones">Zones <span class="unit">(count)</span></label>
+          <input id="hvac-zones" name="HVAC - Zones (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="hvac-systems">Systems <span class="unit">(count)</span></label>
+          <input id="hvac-systems" name="HVAC - Systems (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="hvac-stories">Stories served <span class="unit">(count)</span></label>
+          <input id="hvac-stories" name="HVAC - Stories served (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="hvac-sf">Area served <span class="unit">(sq ft)</span></label>
+          <input id="hvac-sf" name="HVAC - Area served (sq ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div class="span-2">
+          <label for="hvac-notes">Other quantities / notes</label>
+          <textarea id="hvac-notes" name="HVAC - Other quantities / notes" rows="3"></textarea>
+        </div>
+        <div class="check-line span-2">
+          <input type="hidden" class="plans-flag" name="HVAC - Take quantities off the plans" value="No">
+          <label for="hvac-plans"><input id="hvac-plans" class="plans-check" type="checkbox"> Quantities unknown, take them off the plans</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="trade-fields" id="qty-plumbing" data-trade="Plumbing" disabled>
+      <legend>Plumbing</legend>
+      <p class="field-help">Optional. Fixture counts, rough versus finish, and the water heater are the scope that gets priced.</p>
+      <div class="qty-grid">
+        <h3 class="scope-h">Qualifiers</h3>
+        <div>
+          <label for="plumb-phase">Rough-in or finish</label>
+          <select id="plumb-phase" name="Plumbing - Rough-in or finish">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Rough-in only</option>
+            <option>Finish only</option>
+            <option>Rough-in and finish</option>
+            <option>Repair</option>
+          </select>
+        </div>
+        <div>
+          <label for="plumb-new">New or replacement</label>
+          <select id="plumb-new" name="Plumbing - New or replacement">
+            <option value="Not specified" selected>Not specified</option>
+            <option>New construction</option>
+            <option>Replacement</option>
+            <option>Remodel</option>
+            <option>Repair</option>
+          </select>
+        </div>
+        <div>
+          <label for="plumb-wh-type">Water heater type</label>
+          <select id="plumb-wh-type" name="Plumbing - Water heater type">
+            <option value="Not specified" selected>Not specified</option>
+            <option>None</option>
+            <option>Tank, gas</option>
+            <option>Tank, electric</option>
+            <option>Tankless, gas</option>
+            <option>Tankless, electric</option>
+            <option>Heat pump</option>
+            <option>Existing to remain</option>
+          </select>
+        </div>
+        <div>
+          <label for="plumb-pipe">Pipe material</label>
+          <select id="plumb-pipe" name="Plumbing - Pipe material">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Copper</option>
+            <option>PEX</option>
+            <option>CPVC</option>
+            <option>PVC</option>
+            <option>Galvanized</option>
+            <option>Cast iron</option>
+            <option>Mixed</option>
+          </select>
+        </div>
+        <h3 class="scope-h">Quantities</h3>
+        <div>
+          <label for="plumb-fixtures">Total fixtures <span class="unit">(count)</span></label>
+          <input id="plumb-fixtures" name="Plumbing - Total fixtures (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="plumb-wc">Toilets <span class="unit">(count)</span></label>
+          <input id="plumb-wc" name="Plumbing - Toilets (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="plumb-lav">Lavatories <span class="unit">(count)</span></label>
+          <input id="plumb-lav" name="Plumbing - Lavatories (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="plumb-tubs">Tubs and showers <span class="unit">(count)</span></label>
+          <input id="plumb-tubs" name="Plumbing - Tubs and showers (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="plumb-ksink">Kitchen sinks <span class="unit">(count)</span></label>
+          <input id="plumb-ksink" name="Plumbing - Kitchen sinks (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="plumb-wh">Water heaters <span class="unit">(count)</span></label>
+          <input id="plumb-wh" name="Plumbing - Water heaters (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div class="span-2">
+          <label for="plumb-notes">Other quantities / notes</label>
+          <textarea id="plumb-notes" name="Plumbing - Other quantities / notes" rows="3"></textarea>
+        </div>
+        <div class="check-line span-2">
+          <input type="hidden" class="plans-flag" name="Plumbing - Take quantities off the plans" value="No">
+          <label for="plumb-plans"><input id="plumb-plans" class="plans-check" type="checkbox"> Quantities unknown, take them off the plans</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="trade-fields" id="qty-striping" data-trade="Line striping and sealcoat" disabled>
+      <legend>Line striping and sealcoat</legend>
+      <p class="field-help">Optional. Lot area, stall count, and line length are the takeoff. Say whether this is stripe, sealcoat, or both.</p>
+      <div class="qty-grid">
+        <h3 class="scope-h">Qualifiers</h3>
+        <div>
+          <label for="stripe-scope">Scope</label>
+          <select id="stripe-scope" name="Line striping and sealcoat - Scope">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Stripe only</option>
+            <option>Sealcoat only</option>
+            <option>Stripe and sealcoat</option>
+            <option>New layout</option>
+          </select>
+        </div>
+        <div>
+          <label for="stripe-surface">Surface</label>
+          <select id="stripe-surface" name="Line striping and sealcoat - Surface">
+            <option value="Not specified" selected>Not specified</option>
+            <option>Asphalt</option>
+            <option>Concrete</option>
+            <option>Both</option>
+          </select>
+        </div>
+        <div>
+          <label for="stripe-coats">Sealcoat</label>
+          <select id="stripe-coats" name="Line striping and sealcoat - Sealcoat">
+            <option value="Not specified" selected>Not specified</option>
+            <option>None</option>
+            <option>1 coat</option>
+            <option>2 coats</option>
+          </select>
+        </div>
+        <h3 class="scope-h">Quantities</h3>
+        <div>
+          <label for="stripe-sf">Lot area <span class="unit">(sq ft)</span></label>
+          <input id="stripe-sf" name="Line striping and sealcoat - Lot area (sq ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div>
+          <label for="stripe-stalls">Stalls <span class="unit">(count)</span></label>
+          <input id="stripe-stalls" name="Line striping and sealcoat - Stalls (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="stripe-ada">Accessible stalls <span class="unit">(count)</span></label>
+          <input id="stripe-ada" name="Line striping and sealcoat - Accessible stalls (count)" type="number" inputmode="numeric" min="0" step="1" autocomplete="off">
+        </div>
+        <div>
+          <label for="stripe-lf">Line length <span class="unit">(linear ft)</span></label>
+          <input id="stripe-lf" name="Line striping and sealcoat - Line length (linear ft)" type="number" inputmode="decimal" min="0" step="any" autocomplete="off">
+        </div>
+        <div class="span-2">
+          <label for="stripe-notes">Other quantities / notes</label>
+          <textarea id="stripe-notes" name="Line striping and sealcoat - Other quantities / notes" rows="3"></textarea>
+        </div>
+        <div class="check-line span-2">
+          <input type="hidden" class="plans-flag" name="Line striping and sealcoat - Take quantities off the plans" value="No">
+          <label for="stripe-plans"><input id="stripe-plans" class="plans-check" type="checkbox"> Quantities unknown, take them off the plans</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="trade-fields" id="qty-other" data-trade="Other" disabled>
+      <legend>Other trade</legend>
+      <p class="field-help">Optional quantities. The trade name is required so we know what to take off.</p>
+      <div class="qty-grid">
+        <div class="span-2">
+          <label for="f-other-trade">Trade name</label>
+          <input id="f-other-trade" name="Other - Trade name" autocomplete="off">
+        </div>
+        <div class="span-2">
+          <label for="other-notes">Other quantities / notes</label>
+          <textarea id="other-notes" name="Other - Other quantities / notes" rows="3"></textarea>
+        </div>
+        <div class="check-line span-2">
+          <input type="hidden" class="plans-flag" name="Other - Take quantities off the plans" value="No">
+          <label for="other-plans"><input id="other-plans" class="plans-check" type="checkbox"> Quantities unknown, take them off the plans</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <label for="f-receipt">Stripe receipt # (optional)</label>
+    <input id="f-receipt" name="stripe_receipt">
+    <label for="f-files">Upload PDFs (optional, 10 MB total max)</label>
+    <input id="f-files" type="file" name="attachment" accept="application/pdf,.pdf" multiple>
+    <label for="f-link">Plan-room link (use this for large plan sets)</label>
+    <input id="f-link" type="url" name="plan_room_link" placeholder="https://">
+    <label for="f-notes">Notes</label>
+    <textarea id="f-notes" rows="4" name="notes"></textarea>
+    <p class="field-help">Schedule, addenda, or anything that is not covered in the trade sections above.</p>
+    <button class="btn" type="submit">Send package request</button>
+  </form>
+  <p style="font-size:14px">Trouble with the form? <a href="mailto:bids@thumbbiddesk.com?subject=Thumb%20Bid%20Desk%20package%20request">Email bids@thumbbiddesk.com</a> instead.</p>
+  <p>Email: <a href="mailto:bids@thumbbiddesk.com?subject=Thumb%20Bid%20Desk%20package%20request">bids@thumbbiddesk.com</a></p>
+  <script>
+  (function () {
+    if (location.search.indexOf('sent=1') > -1) {
+      document.getElementById('sent-msg').style.display = 'block';
+    }
+    var form = document.getElementById('package-form');
+    if (!form) return;
+    var picks = form.querySelectorAll('.trade-pick');
+    picks.forEach(function (pick) { pick.removeAttribute('name'); });
+    var tradesInput = document.getElementById('f-trades');
+    tradesInput.name = 'trades';
+    var error = document.getElementById('trade-error');
+    var packageSelect = document.getElementById('f-package');
+    var packageNote = document.getElementById('package-trade-note');
+    var otherName = document.getElementById('f-other-trade');
+    var otherPick = document.getElementById('trade-other');
+    var live = document.getElementById('trade-live');
+
+    function syncPlans(panel) {
+      var box = panel.querySelector('.plans-check');
+      var flag = panel.querySelector('.plans-flag');
+      if (box && flag) flag.value = box.checked ? 'Yes' : 'No';
+    }
+
+    function sync() {
+      var selected = [];
+      var nonSmall = false;
+      picks.forEach(function (pick) {
+        var panel = document.getElementById(pick.getAttribute('data-panel'));
+        var on = pick.checked;
+        pick.setAttribute('aria-expanded', on ? 'true' : 'false');
+        if (panel) {
+          panel.classList.toggle('is-open', on);
+          panel.disabled = !on;
+          if (on) syncPlans(panel);
+        }
+        if (on) {
+          var label = pick.value;
+          if (pick.value === 'Other') {
+            var typed = otherName.value.trim();
+            label = typed ? ('Other: ' + typed) : 'Other';
+          }
+          selected.push(label);
+          if (!pick.hasAttribute('data-small')) nonSmall = true;
+        }
+      });
+      tradesInput.value = selected.join(', ');
+      var smallPkg = packageSelect.value.indexOf('Small') === 0;
+      packageNote.hidden = !(smallPkg && selected.length > 0 && (nonSmall || selected.length > 1));
+      if (otherPick.checked && !otherName.value.trim()) {
+        otherName.setCustomValidity('Enter the trade name.');
+      } else {
+        otherName.setCustomValidity('');
+      }
+      if (selected.length) error.hidden = true;
+      live.textContent = selected.length ? ('Showing scope fields for ' + selected.join(', ') + '.') : '';
+    }
+
+    function restoreOpenFields() {
+      form.querySelectorAll('.trade-fields.is-open').forEach(function (panel) {
+        panel.disabled = false;
+        panel.querySelectorAll('input, select, textarea').forEach(function (el) {
+          el.disabled = false;
+        });
+      });
+      sync();
+    }
+
+    function omitBlanks() {
+      var controls = form.querySelectorAll('.trade-fields input, .trade-fields select, .trade-fields textarea');
+      controls.forEach(function (el) {
+        if (el.disabled || el.classList.contains('plans-flag') || el.classList.contains('plans-check')) return;
+        var value = (el.value || '').trim();
+        if (value === '' || value === 'Not specified') el.disabled = true;
+      });
+    }
+
+    picks.forEach(function (pick) {
+      pick.addEventListener('change', sync);
+    });
+    form.querySelectorAll('.plans-check').forEach(function (box) {
+      box.addEventListener('change', function () {
+        var panel = box.closest('.trade-fields');
+        if (panel) syncPlans(panel);
+      });
+    });
+    otherName.addEventListener('input', sync);
+    packageSelect.addEventListener('change', sync);
+    form.addEventListener('wheel', function (event) {
+      var el = event.target;
+      if (el && el.tagName === 'INPUT' && el.type === 'number' && document.activeElement === el) el.blur();
+    }, { passive: true });
+    form.addEventListener('submit', function (event) {
+      sync();
+      var any = false;
+      picks.forEach(function (pick) { if (pick.checked) any = true; });
+      if (!any) {
+        event.preventDefault();
+        error.hidden = false;
+        document.getElementById('trade-painting').focus();
+        return;
+      }
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        form.reportValidity();
+        return;
+      }
+      omitBlanks();
+      window.setTimeout(restoreOpenFields, 0);
+    });
+    sync();
+  })();
+  </script>
+</section>
+<footer>Thumb Bid Desk · Based in Michigan<br>We organize and prepare bid packages. You review, set your final price, sign, and submit your own bid. Work is prepared with AI-assisted tools and checked by a person before delivery.<br><a href="terms.html">Service Terms</a> · <a href="privacy-policy.html">Privacy Policy</a></footer>
+</body>
+</html>
