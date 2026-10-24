@@ -20,31 +20,47 @@
   <p><b>We work with all trades.</b></p>
   <p>The takeoff and estimate are a starting point: you review them and set your own final price.</p>
   <p>Every takeoff and estimate is reviewed by a person before delivery.</p>
-  <p>Simple per-package pricing. No subscriptions.</p>
+  <p>Simple per-package pricing, or a monthly plan if you bid often.</p>
 </div>
 <section>
   <div class="grid">
     <div class="card">
       <h3>Small single-trade package</h3>
-      <p style="font-size:26px;font-weight:bold;color:#14365a">$149</p>
-      Painting, drywall or flooring: takeoff with a starting-point estimate using typical industry unit rates for one trade scope, up to ~25 pages. <b>Painting, drywall and flooring only.</b> All other trades, choose the Full $299 package.<br>
-      <a class="btn" href="https://buy.stripe.com/00w9AV2Fe68u3Tu7a0es000" target="_blank" rel="noopener">Buy Small Package – $149</a>
+      <p style="font-size:26px;font-weight:bold;color:#14365a">$99</p>
+      Painting, drywall or flooring: takeoff with a starting-point estimate using typical industry unit rates for one trade scope, up to ~25 pages. <b>Painting, drywall and flooring only.</b> All other trades, choose the Full $229 package.<br>
+      <a class="btn" href="https://buy.stripe.com/28E4gBgw4eF0ey81PGes005" target="_blank" rel="noopener">Buy Small Package – $99</a>
     </div>
     <div class="card">
       <h3>Full bid package</h3>
-      <p style="font-size:26px;font-weight:bold;color:#14365a">$299</p>
+      <p style="font-size:26px;font-weight:bold;color:#14365a">$229</p>
       Takeoff, draft proposal, forms checklist, W-9/COI request letters, bid-form prep, and a go/no-go memo.<br>
-      <a class="btn" href="https://buy.stripe.com/4gM7sN2Fe54q89KeCses001" target="_blank" rel="noopener">Buy Full Bid Package – $299</a>
+      <a class="btn" href="https://buy.stripe.com/3cI28t0x668u1Lm0LCes006" target="_blank" rel="noopener">Buy Full Bid Package – $229</a>
     </div>
     <div class="card">
       <h3>Addendum update</h3>
-      <p style="font-size:26px;font-weight:bold;color:#14365a">$49</p>
+      <p style="font-size:26px;font-weight:bold;color:#14365a">$39</p>
       Update to a package we already processed when a new addendum is issued.<br>
-      <a class="btn" href="https://buy.stripe.com/6oU8wRbbKbsO4Xy9i8es002" target="_blank" rel="noopener">Buy Addendum Update – $49</a>
+      <a class="btn" href="https://buy.stripe.com/dRmaEZ5Rq54qahSeCses007" target="_blank" rel="noopener">Buy Addendum Update – $39</a>
     </div>
   </div>
-  <p><b>Rush (next business day): +$75</b>, when capacity allows. <a class="btn" href="https://buy.stripe.com/7sY3cx1Ba2Wiey8fGwes003" target="_blank" rel="noopener">Add Rush – $75</a></p>
-  <p>Rush is a separate add-on checkout: buy your package first, then add Rush as its own $75 payment. If we can't fit a Rush order in, the $75 Rush fee is refunded in full.</p>
+  <p><b>Rush (next business day): +$59</b>, when capacity allows. <a class="btn" href="https://buy.stripe.com/dRm14p5Rq2Wi89Kbqges008" target="_blank" rel="noopener">Add Rush – $59</a></p>
+  <p>Rush is a separate add-on checkout: buy your package first, then add Rush as its own $59 payment. If we can't fit a Rush order in, the $59 Rush fee is refunded in full.</p>
+  <h3>Monthly plans</h3>
+  <div class="grid">
+    <div class="card">
+      <h3>Bid Desk Monthly</h3>
+      <p style="font-size:26px;font-weight:bold;color:#14365a">$399/mo</p>
+      2 Full or 4 Small bid packages per month, plus addenda. Unused credits don't roll over. Cancel anytime.<br>
+      <a class="btn" href="https://buy.stripe.com/bJe00lfs040mahSdyoes009" target="_blank" rel="noopener">Start Bid Desk Monthly – $399/mo</a>
+    </div>
+    <div class="card">
+      <h3>Bid Desk Pro</h3>
+      <p style="font-size:26px;font-weight:bold;color:#14365a">$749/mo</p>
+      4 Full bid packages per month, addenda, and 1 Rush per month. Unused credits don't roll over. Cancel anytime.<br>
+      <a class="btn" href="https://buy.stripe.com/cNi14pfs09kGblWdyoes00a" target="_blank" rel="noopener">Start Bid Desk Pro – $749/mo</a>
+    </div>
+  </div>
+<p class="notice" style="border:1px solid #14365a;padding:10px;border-radius:6px"><b>On-time guarantee:</b> if we miss your bid due date, you get a full refund — except for delays or missed deadlines caused by internet, network, email, or service-provider outages. Thumb Bid Desk is not responsible for delays or missed deadlines caused by internet, network, email, or service-provider outages.</p>
   <p><b>Turnaround:</b> 2 business days from a complete package. Send the package at least 3 business days before the bid is due for standard, or 2 for rush, so you have a day to price.</p>
   <p><b>Large sets:</b> packages over 300 pages get a custom turnaround that we confirm by email before work starts.</p>
 </section>
@@ -90,16 +106,18 @@
 
     <label for="f-package">Package type</label>
     <select id="f-package" name="package">
-      <option>Small single-trade ($149)</option>
-      <option>Full bid package ($299)</option>
-      <option>Addendum update ($49)</option>
+      <option>Small single-trade ($99)</option>
+      <option>Full bid package ($229)</option>
+      <option>Addendum update ($39)</option>
+      <option>Bid Desk Monthly subscriber</option>
+      <option>Bid Desk Pro subscriber</option>
     </select>
-    <label for="f-rush">Rush (+$75)?</label>
+    <label for="f-rush">Rush (+$59)?</label>
     <select id="f-rush" name="rush">
       <option>No</option>
       <option>Yes, next business day</option>
     </select>
-    <p id="package-trade-note" class="form-note" hidden>The $149 small package covers one trade: painting, drywall, or flooring. For any other trade, or more than one trade, choose the Full bid package ($299).</p>
+    <p id="package-trade-note" class="form-note" hidden>The $99 small package covers one trade: painting, drywall, or flooring. For any other trade, or more than one trade, choose the Full bid package ($229).</p>
 
     <div id="trade-live" class="sr-only" aria-live="polite"></div>
 
