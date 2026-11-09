@@ -68,12 +68,16 @@
   <h2>Send a bid package</h2>
   <div id="sent-msg" style="display:none;background:#e6f4ea;border:1px solid #2e7d32;padding:12px 16px;border-radius:6px;margin-bottom:16px"><b>Thanks, we got your package request.</b> We'll reply by email to confirm it's complete.</div>
   <p>Fill out the form below. Choose at least one trade, then add the quantities and scope details you already know. Those details are optional. If you do not have counts, check "take them off the plans." Upload PDFs (up to 10 MB total per submission) or paste a plan-room link for large plan sets.</p>
-  <noscript><p class="form-note">Quantity fields open with JavaScript. You can still send this form; put scope quantities in Notes, or email <a href="mailto:bids@thumbbiddesk.com">bids@thumbbiddesk.com</a>.</p></noscript>
-  <form id="package-form" action="https://formly.email/submit" method="POST" enctype="multipart/form-data">
+  <noscript><p class="form-note">JavaScript is required to send this form. Email <a href="mailto:bids@thumbbiddesk.com">bids@thumbbiddesk.com</a> instead, or enable JavaScript and reload.</p></noscript>
+  <form id="package-form" method="POST" enctype="multipart/form-data" data-action="https://formly.email/submit">
     <input type="hidden" name="access_key" value="1e35f0cf9ffc4ee99e9c650744b64e1d">
     <input type="hidden" name="subject" value="New Thumb Bid Desk package request">
     <input type="hidden" name="redirect" value="https://thumbbiddesk.com/thank-you.html">
-    <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+    <input type="hidden" name="honeypot" value="website">
+    <div class="hp-wrap" aria-hidden="true">
+      <label for="f-website">Website</label>
+      <input type="text" name="website" id="f-website" value="" tabindex="-1" autocomplete="off">
+    </div>
     <input type="hidden" id="f-trades" value="">
 
     <label for="f-name">Name</label>
@@ -869,6 +873,19 @@
     }
     var form = document.getElementById('package-form');
     if (!form) return;
+    var formAction = form.getAttribute('data-action') || 'https://formly.email/submit';
+    form.setAttribute('action', formAction);
+    var pageLoadedAt = Date.now();
+    var dueInput = document.getElementById('f-due');
+    function todayISO() {
+      var d = new Date();
+      var m = String(d.getMonth() + 1).padStart(2, '0');
+      var day = String(d.getDate()).padStart(2, '0');
+      return d.getFullYear() + '-' + m + '-' + day;
+    }
+    if (dueInput) {
+      dueInput.min = todayISO();
+    }
     var picks = form.querySelectorAll('.trade-pick');
     picks.forEach(function (pick) { pick.removeAttribute('name'); });
     var tradesInput = document.getElementById('f-trades');
@@ -956,6 +973,27 @@
     }, { passive: true });
     form.addEventListener('submit', function (event) {
       sync();
+      var honey = form.querySelector('input[name="website"]');
+      if (honey && honey.value) {
+        event.preventDefault();
+        return;
+      }
+      if (Date.now() - pageLoadedAt < 3000) {
+        event.preventDefault();
+        alert('Please wait a moment and try again.');
+        return;
+      }
+      if (dueInput) {
+        dueInput.min = todayISO();
+        if (dueInput.value && dueInput.value < dueInput.min) {
+          event.preventDefault();
+          dueInput.setCustomValidity('Bid due date must be today or later.');
+          dueInput.reportValidity();
+          dueInput.setCustomValidity('');
+          return;
+        }
+        dueInput.setCustomValidity('');
+      }
       var any = false;
       picks.forEach(function (pick) { if (pick.checked) any = true; });
       if (!any) {
